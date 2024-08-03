@@ -1,88 +1,75 @@
 import React from "react";
-// countup
-import CountUp from "react-countup";
-// intersection observer hook
-import { useInView } from "react-intersection-observer";
-// motion
 import { motion } from "framer-motion";
-// variant
 import { fadeIn } from "../variants";
+import { useInView } from "framer-motion";
+import CountUp from "react-countup";
+import { Image } from "../assets/about.png";
 
 const About = () => {
-  // const [ref, inView] = useInView({
-  //   threshold: 0.5,
-  // });
   return (
-    <section className="section" id="about">
-      <div className="container mx-auto ">
-        <div className="flex flex-col h-[800px] gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0 ">
-          {/* image */}
-          <motion.div
-            variants={fadeIn("right", 0.5)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 bg-about bg-contain bg-no-repeat h-[500px] mix-blend-lighten bg-top"
-          ></motion.div>
-          {/* text */}
-          <motion.div
-           variants={fadeIn("left", 0.3)}
-           initial="hidden"
-           whileInView={"show"}
-           viewport={{ once: false, amount: 0.3 }}
-          className="flex-1">
-            <h2 className="h2 text-accent">About me</h2>
-            <h3 className="h3 mb-3">
-              I'm a freelance front-end Developer with over 5 years of
-              experience.
-            </h3>
-            <p className="mb-6">
-              {" "}
-              lorem ipsum dolor sit,amet lorem ipsum dolor sit,amet lorem ipsum
-              dolor sit,amet lorem ipsum dolor sit,amet
-            </p>
-            {/* stats */}
-            <div className="flex gap-x-6 lg:gap-x-10 mb-12">
-              <div>
-                <div className="text-[40px] font-tertiary text-gradient mb-2">
-                 <CountUp start={0} end={13} duration={3} />
-                </div>
-                <div className="font-primary text-sm tracking-[2px]">
-                  Years of <br /> Experience
-                </div>
-              </div>
-              <div>
-                <div className="text-[40px] font-tertiary text-gradient mb-2">
-                  <CountUp start={0} end={15} duration={3} /> 
-                  k+
-                </div>
-                <div className="font-primary text-sm tracking-[2px]">
-                  Projects
-                  <br /> Completed
-                </div>
-              </div>
-              <div>
-                <div className="text-[40px] font-tertiary text-gradient mb-0">
-                  {/* {inView ? */}
-                   <CountUp start={0} end={12} duration={3} /> 
-                   {/* } */}
-                  k+
-                </div>
-                <div className="font-primary text-sm tracking-[2px]">
-                  Satisfied <br />
-                  Clients
-                </div>
-              </div>
+    <section
+      className="lg:flex justify-between items-center w-[1200px] mx-10 mb-[100px]"
+      id="about"
+    >
+      {/* image */}
+      <motion.div
+        variants={fadeIn("right", 0.5)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.3 }}
+        className="flex-1 flex flex-col bg-about bg-contain bg-no-repeat h-[400px] mix-blend-lighten mx-[100px]"
+      ></motion.div>
+      {/* text */}
+      <motion.div
+        variants={fadeIn("left", 0.5)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.3 }}
+        className="flex flex-col gap-y-8"
+      >
+        <h2 className="h2 text-accent">About Me</h2>
+        <h2 className="h3 font-semibold mb-0">
+          I'm a frontend developer <br />
+          with over 5 years of experience.
+        </h2>
+        <p>
+          Lorem ipsum dolor amet sit adipicising consectetur <br />
+          Lorem ipsum dolor amet sit
+        </p>
+        <div className="flex gap-x-10 ">
+          <div>
+            <div className="text-gradient text-4xl">
+              <CountUp start={0} end={15} duration={5} />
             </div>
-            <div className="flex gap-x-8 items-center mt-0">
-              <button className="btn btn-lg">Contact me</button>
-              <a href="#" className="text-gradient btn-link">
-                My Portfolio
-              </a>
+            <div className="font-primary text-sm tracking-[2px]">
+              Years of <br />
+              experience{" "}
             </div>
-          </motion.div>
+          </div>
+
+          <div>
+            <div className="text-gradient text-4xl">
+              <CountUp start={0} end={15} duration={5} />
+              k+
+            </div>
+            <div className="font-primary text-sm tracking-[2px]">
+              Projects <br />
+              Completed{" "}
+            </div>
+          </div>
+
+          <div>
+            <div className="text-gradient text-4xl">
+              <CountUp start={0} end={12} duration={5} />
+              k+
+            </div>
+            <div className="font-primary text-sm tracking-[2px]">
+              Satisfied <br />
+              clients{" "}
+            </div>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

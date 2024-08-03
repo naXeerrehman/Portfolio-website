@@ -1,50 +1,56 @@
 import React from "react";
 // import icons
-import { BiClipboard, BiHomeAlt, BiUser } from "react-icons/bi";
-import { BsClipboardData, BsFillBriefcase, BsChatSquare, BsBriefcase, BsChatSquareText } from "react-icons/bs";
+import { BiHomeAlt,  BiUser } from "react-icons/bi";
+import { BsClipboardData, BsBriefcase, BsChatSquareText } from "react-icons/bs";
 // import link
 import { Link } from "react-scroll";
 
 const Nav = () => {
   return (
-    <nav className="fixed bottom-2 lg:bottom-8 w-full overflow-hidden z-50">
-      <div className="container mx-auto">
-        {/* nav inner */}
-        <div className="w-full bg-black/20 h-[46px] backdrop-blur-2xl rounded-full max-w-[460px] mx-auto px-5 flex justify-between items-center text-2xl text-white/50">
+    <div className="">
+        {/* nav  */}
+        <nav className="bg-black/20 h-[46px] backdrop-blur-2xl rounded-full max-w-[460px]  px-5 flex justify-between items-center text-2xl text-white/50 fixed bottom-3 lg:bottom-3 w-full z-50 ml-[80px] lg:ml-[370px]">
+          {/* home */}
           <Link to='home' 
-          activeClass='active'
+          // activeClass='active'
           smooth={true}
-          spy={true} className="cursor-pointer w-[50px] h-[40px] flex items-center justify-center"
-            offSet={-200}>
+          spy={true}
+           className="cursor-pointer w-[50px] h-[40px] flex items-center justify-center"
+            // offSet={-200}
+            >
             <BiHomeAlt />
           </Link>
+          {/* about */}
           <Link to='about' 
-          activeClass="active"
+          // activeClass="active"
           smooth={true}
-          spy={true} className="cursor-pointer w-[50px] h-[40px] flex items-center justify-center">
+          spy={true} 
+          className="cursor-pointer w-[50px] h-[40px] flex items-center justify-center">
             <BiUser />
           </Link>
+          {/* clipboard */}
           <Link to='services' 
-          activeClass="active"
+          // activeClass="active"
           smooth={true}
           spy={true} className="cursor-pointer w-[50px] h-[40px] flex items-center justify-center">
             <BsClipboardData />
           </Link>
+          {/* breifcase */}
           <Link to='work' 
           activeClass="active"
           smooth={true}
           spy={true} className="cursor-pointer w-[50px] h-[40px] flex items-center justify-center">
             <BsBriefcase />
           </Link>
+          {/* chatsquare */}
           <Link to='contact' 
           activeClass="active"
           smooth={true}
           spy={true} className="cursor-pointer w-[50px] h-[40px] flex items-center justify-center">
             <BsChatSquareText />
           </Link>
-        </div>
-      </div>
-    </nav>
+        </nav>
+    </div>
   );
 };
 export default Nav;
